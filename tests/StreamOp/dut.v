@@ -13,7 +13,9 @@ module dut;
   assign y = { 8'h88, 8'h77, 8'h66, 8'h55 };
   assign b = { << 8 {y} };
 
-  assign c = { << 8 {x, y} };
+  initial begin
+     c = { << 8 {x, y} };
+  end
 
   logic[63:0] d;
   assign d = { >> 8 {y, x} };
